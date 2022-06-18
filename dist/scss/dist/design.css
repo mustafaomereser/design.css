@@ -1,6 +1,32 @@
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--theme-background);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
 .row {
+  --padding: .5rem;
   display: flex;
   flex-wrap: wrap;
+}
+.row * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--padding) * .5);
+  padding-left: calc(var(--padding) * .5);
+  margin-top: 0;
 }
 .row .col {
   flex: 1 0 0%;
@@ -414,18 +440,224 @@
   width: 100%;
 }
 
+.btn {
+  font-size: 13pt;
+  border-radius: 3px;
+  border: none;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: 90ms background-color ease-in;
+}
+.btn.xs {
+  font-size: 10pt !important;
+}
+.btn.sm {
+  font-size: 12pt !important;
+}
+.btn.lg {
+  font-size: 14pt !important;
+}
+.btn.xl {
+  font-size: 16pt !important;
+}
+.btn.danger {
+  color: #eee;
+  background-color: #dc3545;
+}
+.btn.danger.shadow {
+  color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.2);
+}
+.btn.danger.shadow:hover[class~=btn] {
+  background-color: rgba(220, 53, 69, 0.4);
+}
+.btn.primary {
+  color: #eee;
+  background-color: #0d6efd;
+}
+.btn.primary.shadow {
+  color: #0d6efd !important;
+  background-color: rgba(13, 110, 253, 0.2);
+}
+.btn.primary.shadow:hover[class~=btn] {
+  background-color: rgba(13, 110, 253, 0.4);
+}
+.btn.info {
+  color: #eee;
+  background-color: #0dcaf0;
+}
+.btn.info.shadow {
+  color: #0dcaf0 !important;
+  background-color: rgba(13, 202, 240, 0.2);
+}
+.btn.info.shadow:hover[class~=btn] {
+  background-color: rgba(13, 202, 240, 0.4);
+}
+.btn.warning {
+  color: #eee;
+  background-color: #ffc107;
+}
+.btn.warning.shadow {
+  color: #ffc107 !important;
+  background-color: rgba(255, 193, 7, 0.2);
+}
+.btn.warning.shadow:hover[class~=btn] {
+  background-color: rgba(255, 193, 7, 0.4);
+}
+.btn.dark {
+  color: #eee;
+  background-color: #212529;
+}
+.btn.dark.shadow {
+  color: #212529 !important;
+  background-color: rgba(33, 37, 41, 0.2);
+}
+.btn.dark.shadow:hover[class~=btn] {
+  background-color: rgba(33, 37, 41, 0.4);
+}
+.btn.light {
+  color: #333 !important;
+  color: #eee;
+  background-color: #f8f9fa;
+}
+.btn.light.shadow {
+  color: #f8f9fa !important;
+  background-color: rgba(248, 249, 250, 0.2);
+}
+.btn.light.shadow:hover[class~=btn] {
+  background-color: rgba(248, 249, 250, 0.4);
+}
+
+.alert {
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 3px;
+}
+.alert.danger {
+  color: #eee;
+  background-color: #dc3545;
+}
+.alert.danger.shadow {
+  color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.2);
+}
+.alert.danger.shadow:hover[class~=btn] {
+  background-color: rgba(220, 53, 69, 0.4);
+}
+.alert.primary {
+  color: #eee;
+  background-color: #0d6efd;
+}
+.alert.primary.shadow {
+  color: #0d6efd !important;
+  background-color: rgba(13, 110, 253, 0.2);
+}
+.alert.primary.shadow:hover[class~=btn] {
+  background-color: rgba(13, 110, 253, 0.4);
+}
+.alert.info {
+  color: #eee;
+  background-color: #0dcaf0;
+}
+.alert.info.shadow {
+  color: #0dcaf0 !important;
+  background-color: rgba(13, 202, 240, 0.2);
+}
+.alert.info.shadow:hover[class~=btn] {
+  background-color: rgba(13, 202, 240, 0.4);
+}
+.alert.warning {
+  color: #eee;
+  background-color: #ffc107;
+}
+.alert.warning.shadow {
+  color: #ffc107 !important;
+  background-color: rgba(255, 193, 7, 0.2);
+}
+.alert.warning.shadow:hover[class~=btn] {
+  background-color: rgba(255, 193, 7, 0.4);
+}
+.alert.dark {
+  color: #eee;
+  background-color: #212529;
+}
+.alert.dark.shadow {
+  color: #212529 !important;
+  background-color: rgba(33, 37, 41, 0.2);
+}
+.alert.dark.shadow:hover[class~=btn] {
+  background-color: rgba(33, 37, 41, 0.4);
+}
+.alert.light {
+  color: #333 !important;
+  color: #eee;
+  background-color: #f8f9fa;
+}
+.alert.light.shadow {
+  color: #f8f9fa !important;
+  background-color: rgba(248, 249, 250, 0.2);
+}
+.alert.light.shadow:hover[class~=btn] {
+  background-color: rgba(248, 249, 250, 0.4);
+}
+
+.modal {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  height: 0;
+  width: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  transition: 0.2s top ease-in;
+  z-index: 101;
+}
+.modal.show {
+  top: 50px;
+  visibility: visible;
+  height: auto;
+  width: 100%;
+}
+.modal.show div {
+  background: var(--theme-background);
+  width: 30%;
+  padding: 10px 25px;
+}
+.modal.show .header {
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid var(--theme-overlay);
+}
+.modal.show .footer {
+  border-top: 1px solid var(--theme-overlay);
+  border-radius: 0 0 5px 5px;
+}
+
+.float-fix {
+  overflow: hidden;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: left;
+}
+
+.back-drop {
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
 .hidden {
   display: none;
 }
 
-.show {
-  display: unset !important;
-}
-
 .invisible {
   visibility: hidden;
-}
-
-.visible {
-  visibility: visible !important;
 }

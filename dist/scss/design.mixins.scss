@@ -1,0 +1,13 @@
+@mixin color($color) {
+    color: #eee;
+    background-color: rgba($color: nth(map-values($colors), $color), $alpha: 1);
+
+    &.shadow {
+        color: nth(map-values($colors), $color) !important;
+        background-color: rgba($color: nth(map-values($colors), $color), $alpha: .2);
+
+        &:hover[class~="btn"] {
+            background-color: rgba($color: nth(map-values($colors), $color), $alpha: .4);
+        }
+    }
+}
