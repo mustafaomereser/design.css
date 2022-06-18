@@ -1,0 +1,22 @@
+$sizes: ('xl', 'lg', 'md', 'sm', 'xs');
+$sizesCount: length($sizes) + 1;
+$screenMin: ('xl': 1200px, 'lg': 992px, 'md': 768px, 'sm': 576px, 'xs': 0px);
+$screenMax: ('xl': 18000px, 'lg': 18000px, 'md': 1919px, 'sm': 1279px, 'xs': 959px);
+
+@mixin screen-size($size) {
+    @media screen and (min-width: nth(map-values($screenMin), $size)) and (max-width: nth(map-values($screenMax), $size)) {
+        @content;
+    }
+}
+
+@mixin lt($size) {
+    @media screen and (max-width: nth(map-values($screenMax), $size)) {
+        @content;
+    }
+}
+
+@mixin gt($size) {
+    @media screen and (min-width: nth(map-values($screenMin), $size)) {
+        @content;
+    }
+}

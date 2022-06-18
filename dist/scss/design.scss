@@ -1,0 +1,45 @@
+@import 'media-queries.scss';
+@import 'design.css.grid.scss';
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    .col {
+        flex: 1 0 0%;
+    }
+
+    @for $c from 1 to 13 {
+        @for $size from 1 to $sizesCount {
+            @include gt($size) {
+                .col-#{nth($sizes, $size)}-#{$c} {
+                    @include make-col($c, true);
+                }
+            }
+        }
+
+        .col-#{$c} {
+            @include make-col($c);
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: unset !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.btn {
+    
+}

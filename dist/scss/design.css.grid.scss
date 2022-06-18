@@ -1,0 +1,13 @@
+$cols: (8.33333333%, 16.66666667%, 25%, 33.33333333%, 41.66666667%, 50%, 58.33333333%, 66.66666667%, 75%, 83.33333333%, 91.66666667%, 100%);
+
+@mixin make-col($col, $important: false) {
+    flex: 0 0 auto;
+
+    @if $important {
+        width: nth($cols, $col) !important;
+    }
+
+    @else {
+        width: nth($cols, $col);
+    }
+}
