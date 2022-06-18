@@ -3,7 +3,7 @@ color 3
 title PUSH
 
 :bas
-
+	cls
 	echo "Yorum:"
 	set/p "cho=>"
 	git add .
