@@ -28,7 +28,10 @@ $(function () {
 
     switch (status) {
       case 'show':
-        $(this).addClass('show');
+        $('body').addClass('overflow-hidden');
+        $(this).addClass('show').find('.close').on('click', function () {
+          return $(_this).modal('hide');
+        });
         $.design().backdrop(true, function (is) {
           $(_this).modal('hide');
           $.design().backdrop(false);
@@ -36,7 +39,8 @@ $(function () {
         break;
 
       case 'hide':
-        $(this).removeClass('show');
+        $('body').removeClass('overflow-hidden');
+        $(this).removeClass('show').find('.close').off('click');
         $.design().backdrop(false);
         break;
     }

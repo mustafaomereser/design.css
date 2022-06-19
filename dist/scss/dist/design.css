@@ -444,7 +444,7 @@ body {
   font-size: 13pt;
   border-radius: 3px;
   border: none;
-  padding: 3px 10px;
+  padding: 5px 10px;
   cursor: pointer;
   transition: 90ms background-color ease-in;
 }
@@ -607,28 +607,47 @@ body {
   top: 0;
   height: 0;
   width: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: grid;
   place-items: center;
-  transition: 0.2s top ease-in;
+  width: 25%;
+  transition: 0.2s top ease-in, 0.2s width ease-in;
   z-index: 101;
 }
+@media screen and (max-width: 959px) {
+  .modal {
+    width: 90%;
+  }
+}
 .modal.show {
-  top: 50px;
+  top: 100px;
   visibility: visible;
   height: auto;
-  width: 100%;
 }
 .modal.show div {
   background: var(--theme-background);
-  width: 30%;
+  width: 100%;
   padding: 10px 25px;
 }
 .modal.show .header {
   border-radius: 5px 5px 0 0;
   border-bottom: 1px solid var(--theme-overlay);
+  overflow: hidden;
+}
+.modal.show .header .title {
+  float: left;
+  font-size: 13pt;
+  font-weight: bold;
+}
+.modal.show .header .close {
+  float: right;
+}
+.modal.show .body {
+  height: 100%;
 }
 .modal.show .footer {
+  text-align: right;
   border-top: 1px solid var(--theme-overlay);
   border-radius: 0 0 5px 5px;
 }
@@ -660,4 +679,8 @@ body {
 
 .invisible {
   visibility: hidden;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

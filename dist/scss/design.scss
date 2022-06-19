@@ -51,7 +51,7 @@ body {
     font-size: 13pt;
     border-radius: 3px;
     border: none;
-    padding: 3px 10px;
+    padding: 5px 10px;
     cursor: pointer;
     transition: 90ms background-color ease-in;
 
@@ -133,7 +133,6 @@ body {
 
 // Alert: End
 
-
 // Modal: Start
 .modal {
     position: fixed;
@@ -143,37 +142,59 @@ body {
     height: 0;
     width: 0;
 
-    left: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     display: grid;
     place-items: center;
 
+    width: 25%;
+
+    @include lt(5) {
+        width: 90%;
+    }
+
     &.show {
-        top: 50px;
+        top: 100px;
         visibility: visible;
         height: auto;
-        width: 100%;
+
 
         & div {
             background: var(--theme-background);
-            width: 30%;
+            width: 100%;
             padding: 10px 25px;
         }
 
         .header {
             border-radius: 5px 5px 0 0;
             border-bottom: 1px solid var(--theme-overlay);
+            overflow: hidden;
+
+            .title {
+                float: left;
+                font-size: 13pt;
+                font-weight: bold;
+            }
+
+            .close {
+                float: right;
+            }
         }
 
-        .body {}
+        .body {
+            height: 100%;
+        }
 
         .footer {
+            text-align: right;
             border-top: 1px solid var(--theme-overlay);
             border-radius: 0 0 5px 5px;
         }
     }
 
-    transition: .2s top ease-in;
+    transition: .2s top ease-in,
+    .2s width ease-in;
     z-index: 101;
 }
 
@@ -196,7 +217,6 @@ body {
 // Float: End
 
 
-
 // Others
 .back-drop {
     position: fixed;
@@ -213,4 +233,8 @@ body {
 
 .invisible {
     visibility: hidden;
+}
+
+.overflow-hidden {
+    overflow: hidden;
 }
