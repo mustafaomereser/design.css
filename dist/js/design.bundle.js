@@ -40,4 +40,9 @@ $(() => {
         }
         return this;
     }
+
+
+    $('[data-toggle="modal"][data-target]').on('click', function () {
+        $($(this).data('target')).modal('show');
+    });
 });
