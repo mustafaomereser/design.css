@@ -1,5 +1,5 @@
-@import 'design.vars.scss';
 @import 'design.mixins.scss';
+@import 'design.vars.scss';
 @import 'design.media.scss';
 @import 'design.grid.scss';
 @import 'design.reset.scss';
@@ -71,30 +71,8 @@ body {
         font-size: 16pt !important;
     }
 
-    &.danger {
-        @include color(1);
-    }
 
-    &.primary {
-        @include color(2);
-    }
-
-    &.info {
-        @include color(3);
-    }
-
-    &.warning {
-        @include color(4);
-    }
-
-    &.dark {
-        @include color(5);
-    }
-
-    &.light {
-        color: #333 !important;
-        @include color(6);
-    }
+    @include colors;
 }
 
 // Btn: End
@@ -105,30 +83,7 @@ body {
     padding: 10px;
     margin-bottom: 3px;
 
-    &.danger {
-        @include color(1);
-    }
-
-    &.primary {
-        @include color(2);
-    }
-
-    &.info {
-        @include color(3);
-    }
-
-    &.warning {
-        @include color(4);
-    }
-
-    &.dark {
-        @include color(5);
-    }
-
-    &.light {
-        color: #333 !important;
-        @include color(6);
-    }
+    @include colors;
 }
 
 // Alert: End

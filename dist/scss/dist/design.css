@@ -1,3 +1,20 @@
+:root {
+  --color-danger: #dc3545;
+  --color-danger-rgb: 220, 53, 69;
+  --color-primary: #0d6efd;
+  --color-primary-rgb: 13, 110, 253;
+  --color-info: #0dcaf0;
+  --color-info-rgb: 13, 202, 240;
+  --color-warning: #ffc107;
+  --color-warning-rgb: 255, 193, 7;
+  --color-dark: #212529;
+  --color-dark-rgb: 33, 37, 41;
+  --color-light: #f8f9fa;
+  --color-light-rgb: 248, 249, 250;
+  --color-success: #198754;
+  --color-success-rgb: 25, 135, 84;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -462,70 +479,80 @@ body {
 }
 .btn.danger {
   color: #eee;
-  background-color: #dc3545;
+  background-color: var(--color-danger);
 }
 .btn.danger.shadow {
-  color: #dc3545 !important;
-  background-color: rgba(220, 53, 69, 0.2);
+  color: var(--color-danger) !important;
+  background-color: rgba(var(--color-danger-rgb), 0.2);
 }
 .btn.danger.shadow:hover[class~=btn] {
-  background-color: rgba(220, 53, 69, 0.4);
+  background-color: rgba(var(--color-danger-rgb), 0.4);
 }
 .btn.primary {
   color: #eee;
-  background-color: #0d6efd;
+  background-color: var(--color-primary);
 }
 .btn.primary.shadow {
-  color: #0d6efd !important;
-  background-color: rgba(13, 110, 253, 0.2);
+  color: var(--color-primary) !important;
+  background-color: rgba(var(--color-primary-rgb), 0.2);
 }
 .btn.primary.shadow:hover[class~=btn] {
-  background-color: rgba(13, 110, 253, 0.4);
+  background-color: rgba(var(--color-primary-rgb), 0.4);
 }
 .btn.info {
   color: #eee;
-  background-color: #0dcaf0;
+  background-color: var(--color-info);
 }
 .btn.info.shadow {
-  color: #0dcaf0 !important;
-  background-color: rgba(13, 202, 240, 0.2);
+  color: var(--color-info) !important;
+  background-color: rgba(var(--color-info-rgb), 0.2);
 }
 .btn.info.shadow:hover[class~=btn] {
-  background-color: rgba(13, 202, 240, 0.4);
+  background-color: rgba(var(--color-info-rgb), 0.4);
 }
 .btn.warning {
   color: #eee;
-  background-color: #ffc107;
+  background-color: var(--color-warning);
 }
 .btn.warning.shadow {
-  color: #ffc107 !important;
-  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--color-warning) !important;
+  background-color: rgba(var(--color-warning-rgb), 0.2);
 }
 .btn.warning.shadow:hover[class~=btn] {
-  background-color: rgba(255, 193, 7, 0.4);
+  background-color: rgba(var(--color-warning-rgb), 0.4);
 }
 .btn.dark {
   color: #eee;
-  background-color: #212529;
+  background-color: var(--color-dark);
 }
 .btn.dark.shadow {
-  color: #212529 !important;
-  background-color: rgba(33, 37, 41, 0.2);
+  color: var(--color-dark) !important;
+  background-color: rgba(var(--color-dark-rgb), 0.2);
 }
 .btn.dark.shadow:hover[class~=btn] {
-  background-color: rgba(33, 37, 41, 0.4);
+  background-color: rgba(var(--color-dark-rgb), 0.4);
 }
 .btn.light {
   color: #333 !important;
-  color: #eee;
-  background-color: #f8f9fa;
+  background-color: var(--color-light);
 }
 .btn.light.shadow {
-  color: #f8f9fa !important;
-  background-color: rgba(248, 249, 250, 0.2);
+  color: var(--color-light) !important;
+  background-color: rgba(var(--color-light-rgb), 0.2);
 }
 .btn.light.shadow:hover[class~=btn] {
-  background-color: rgba(248, 249, 250, 0.4);
+  background-color: rgba(var(--color-light-rgb), 0.4);
+}
+.btn.success {
+  color: #eee;
+  background-color: var(--color-success);
+}
+.btn.success.shadow {
+  color: var(--color-success) !important;
+  background-color: rgba(var(--color-success-rgb), 0.2);
+}
+.btn.success.shadow:hover[class~=btn] {
+  background-color: rgba(var(--color-success-rgb), 0.4);
 }
 
 .alert {
@@ -535,70 +562,80 @@ body {
 }
 .alert.danger {
   color: #eee;
-  background-color: #dc3545;
+  background-color: var(--color-danger);
 }
 .alert.danger.shadow {
-  color: #dc3545 !important;
-  background-color: rgba(220, 53, 69, 0.2);
+  color: var(--color-danger) !important;
+  background-color: rgba(var(--color-danger-rgb), 0.2);
 }
 .alert.danger.shadow:hover[class~=btn] {
-  background-color: rgba(220, 53, 69, 0.4);
+  background-color: rgba(var(--color-danger-rgb), 0.4);
 }
 .alert.primary {
   color: #eee;
-  background-color: #0d6efd;
+  background-color: var(--color-primary);
 }
 .alert.primary.shadow {
-  color: #0d6efd !important;
-  background-color: rgba(13, 110, 253, 0.2);
+  color: var(--color-primary) !important;
+  background-color: rgba(var(--color-primary-rgb), 0.2);
 }
 .alert.primary.shadow:hover[class~=btn] {
-  background-color: rgba(13, 110, 253, 0.4);
+  background-color: rgba(var(--color-primary-rgb), 0.4);
 }
 .alert.info {
   color: #eee;
-  background-color: #0dcaf0;
+  background-color: var(--color-info);
 }
 .alert.info.shadow {
-  color: #0dcaf0 !important;
-  background-color: rgba(13, 202, 240, 0.2);
+  color: var(--color-info) !important;
+  background-color: rgba(var(--color-info-rgb), 0.2);
 }
 .alert.info.shadow:hover[class~=btn] {
-  background-color: rgba(13, 202, 240, 0.4);
+  background-color: rgba(var(--color-info-rgb), 0.4);
 }
 .alert.warning {
   color: #eee;
-  background-color: #ffc107;
+  background-color: var(--color-warning);
 }
 .alert.warning.shadow {
-  color: #ffc107 !important;
-  background-color: rgba(255, 193, 7, 0.2);
+  color: var(--color-warning) !important;
+  background-color: rgba(var(--color-warning-rgb), 0.2);
 }
 .alert.warning.shadow:hover[class~=btn] {
-  background-color: rgba(255, 193, 7, 0.4);
+  background-color: rgba(var(--color-warning-rgb), 0.4);
 }
 .alert.dark {
   color: #eee;
-  background-color: #212529;
+  background-color: var(--color-dark);
 }
 .alert.dark.shadow {
-  color: #212529 !important;
-  background-color: rgba(33, 37, 41, 0.2);
+  color: var(--color-dark) !important;
+  background-color: rgba(var(--color-dark-rgb), 0.2);
 }
 .alert.dark.shadow:hover[class~=btn] {
-  background-color: rgba(33, 37, 41, 0.4);
+  background-color: rgba(var(--color-dark-rgb), 0.4);
 }
 .alert.light {
   color: #333 !important;
-  color: #eee;
-  background-color: #f8f9fa;
+  background-color: var(--color-light);
 }
 .alert.light.shadow {
-  color: #f8f9fa !important;
-  background-color: rgba(248, 249, 250, 0.2);
+  color: var(--color-light) !important;
+  background-color: rgba(var(--color-light-rgb), 0.2);
 }
 .alert.light.shadow:hover[class~=btn] {
-  background-color: rgba(248, 249, 250, 0.4);
+  background-color: rgba(var(--color-light-rgb), 0.4);
+}
+.alert.success {
+  color: #eee;
+  background-color: var(--color-success);
+}
+.alert.success.shadow {
+  color: var(--color-success) !important;
+  background-color: rgba(var(--color-success-rgb), 0.2);
+}
+.alert.success.shadow:hover[class~=btn] {
+  background-color: rgba(var(--color-success-rgb), 0.4);
 }
 
 .modal {
