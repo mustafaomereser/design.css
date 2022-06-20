@@ -1,0 +1,33 @@
+.row {
+    --padding: 0.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--padding) * 0.5);
+        padding-left: calc(var(--padding) * 0.5);
+        margin-top: 0;
+    }
+
+    .col {
+        flex: 1 0 0%;
+    }
+
+    @for $c from 1 to 13 {
+        @for $size from 1 to $sizesCount {
+            @include gt($size) {
+                .col-#{nth($sizes, $size)}-#{$c} {
+                    @include make-col($c, true);
+                }
+            }
+        }
+
+        .col-#{$c} {
+            @include make-col($c);
+        }
+    }
+}

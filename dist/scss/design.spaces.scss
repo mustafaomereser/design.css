@@ -1,0 +1,64 @@
+.container {
+    padding: 0 12rem;
+    &.full {
+        padding: 0 1rem;
+    }
+}
+
+@for $px from 1 to 201 {
+    .m-#{$px} {
+        margin: #{$px}px;
+    }
+
+    .mx-#{$px} {
+        margin: 0 #{$px}px;
+    }
+
+    .my-#{$px} {
+        margin: #{$px}px 0;
+    }
+
+    .mt-#{$px} {
+        margin-top: #{$px}px;
+    }
+
+    .mb-#{$px} {
+        margin-bottom: #{$px}px;
+    }
+
+    .mr-#{$px} {
+        margin-right: #{$px}px;
+    }
+
+    .ml-#{$px} {
+        margin-left: #{$px}px;
+    }
+
+    .p-#{$px} {
+        padding: #{$px}px;
+    }
+
+    .px-#{$px} {
+        padding: 0 #{$px}px;
+    }
+
+    .py-#{$px} {
+        padding: #{$px}px 0;
+    }
+
+    .pt-#{$px} {
+        padding-top: #{$px}px;
+    }
+
+    .pb-#{$px} {
+        padding-bottom: #{$px}px;
+    }
+
+    .pr-#{$px} {
+        padding-right: #{$px}px;
+    }
+
+    .pl-#{$px} {
+        padding-left: #{$px}px;
+    }
+}

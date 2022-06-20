@@ -1,9 +1,67 @@
-@mixin color($color) {
-    @if $color=='light' {
-        color: #333 !important;
-    }
+$cols: (
+    8.33333333%,
+    16.66666667%,
+    25%,
+    33.33333333%,
+    41.66666667%,
+    50%,
+    58.33333333%,
+    66.66666667%,
+    75%,
+    83.33333333%,
+    91.66666667%,
+    100%
+);
 
-    @else {
+@mixin make-col($col, $important: false) {
+    flex: 0 0 auto;
+
+    @if $important {
+        width: nth($cols, $col) !important;
+    } @else {
+        width: nth($cols, $col);
+    }
+}
+
+$sizes: ("xl", "lg", "md", "sm", "xs");
+$sizesCount: length($sizes) + 1;
+$screenMin: (
+    "xl": 1200px,
+    "lg": 992px,
+    "md": 768px,
+    "sm": 576px,
+    "xs": 0px,
+);
+$screenMax: (
+    "xl": 18000px,
+    "lg": 18000px,
+    "md": 1919px,
+    "sm": 1279px,
+    "xs": 959px,
+);
+
+@mixin screen-size($size) {
+    @media screen and (min-width: nth(map-values($screenMin), $size)) and (max-width: nth(map-values($screenMax), $size)) {
+        @content;
+    }
+}
+
+@mixin lt($size) {
+    @media screen and (max-width: nth(map-values($screenMax), $size)) {
+        @content;
+    }
+}
+
+@mixin gt($size) {
+    @media screen and (min-width: nth(map-values($screenMin), $size)) {
+        @content;
+    }
+}
+
+@mixin color($color) {
+    @if $color== "light" {
+        color: #333 !important;
+    } @else {
         color: #eee;
     }
 
@@ -11,18 +69,16 @@
 
     &.shadow {
         color: var(--color-#{$color}) !important;
-        background-color: rgba(var(--color-#{$color}-rgb), .2);
+        background-color: rgba(var(--color-#{$color}-rgb), 0.2);
 
         &:hover[class~="btn"] {
-            background-color: rgba(var(--color-#{$color}-rgb), .4);
+            background-color: rgba(var(--color-#{$color}-rgb), 0.4);
         }
     }
 }
 
 @mixin colors {
-
-    @each $key,
-    $color in $colors {
+    @each $key, $color in $colors {
         &.#{$key} {
             @include color($key);
         }

@@ -1,0 +1,61 @@
+.modal {
+    position: fixed;
+    visibility: hidden;
+
+    top: 0;
+    height: 0;
+    width: 0;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    place-items: center;
+
+    width: 25%;
+
+    @include lt(5) {
+        width: 90%;
+    }
+
+    &.show {
+        top: 100px;
+        visibility: visible;
+        height: auto;
+
+        & div {
+            background: var(--theme-background);
+            width: 100%;
+            padding: 10px 25px;
+        }
+
+        .header {
+            border-radius: 5px 5px 0 0;
+            border-bottom: 1px solid var(--theme-overlay);
+            overflow: hidden;
+
+            .title {
+                float: left;
+                font-size: 13pt;
+                font-weight: bold;
+            }
+
+            .close {
+                float: right;
+            }
+        }
+
+        .body {
+            height: 100%;
+        }
+
+        .footer {
+            text-align: right;
+            border-top: 1px solid var(--theme-overlay);
+            border-radius: 0 0 5px 5px;
+        }
+    }
+
+    transition: 0.2s top ease-in, 0.2s width ease-in;
+    z-index: 101;
+}

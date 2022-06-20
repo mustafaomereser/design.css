@@ -1,0 +1,26 @@
+.btn {
+    font-size: 13pt;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 90ms background-color ease-in;
+
+    &.xs {
+        font-size: 10pt !important;
+    }
+
+    &.sm {
+        font-size: 12pt !important;
+    }
+
+    &.lg {
+        font-size: 14pt !important;
+    }
+
+    &.xl {
+        font-size: 16pt !important;
+    }
+
+    @include colors;
+}
